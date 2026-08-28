@@ -1,0 +1,102 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug Build",
+            "type": "process",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-O0",
+                "-g3",
+                "-Wall",
+                "-Wextra",
+                "-DLOCAL",
+                "-fsanitize=address,undefined",
+                "-fno-omit-frame-pointer",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}_debug.exe"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "调试构建：O0 + g3 + LOCAL + ASan/UBSan"
+        },
+        {
+            "label": "Debug Build (No Sanitizer)",
+            "type": "process",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-O0",
+                "-g3",
+                "-Wall",
+                "-Wextra",
+                "-DLOCAL",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}_debug.exe"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "调试兜底：当前工具链无 sanitizer 运行库时使用"
+        },
+        {
+            "label": "Submit Simulation Build",
+            "type": "process",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "模拟提交构建：O2，不定义 LOCAL"
+        },
+        {
+            "label": "Compat Check C++14",
+            "type": "process",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++14",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}_c14.exe"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "C++14 兼容性验证"
+        }
+    ]
+}

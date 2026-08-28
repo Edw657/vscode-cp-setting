@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "divyanshuagrawal.competitive-programming-helper"
+    ],
+    "unwantedRecommendations": [
+        "formulahendry.code-runner"
+    ]
+}

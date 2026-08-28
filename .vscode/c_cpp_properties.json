@@ -1,0 +1,14 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "MSYS2 UCRT64 GCC 16",
+            "compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "compilerArgs": ["-std=c++17"],
+            "intelliSenseMode": "windows-gcc-x64",
+            "cppStandard": "c++17",
+            "cStandard": "c17",
+            "includePath": ["${workspaceFolder}", "${workspaceFolder}\\templates", "${workspaceFolder}\\contests"]
+        }
+    ]
+}
