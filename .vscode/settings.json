@@ -3,11 +3,20 @@
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+    "C_Cpp.autocomplete": "disabled",
+    "C_Cpp.suggestSnippets": false,
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 120 }",
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.quickSuggestions": false,
+        "editor.suggestOnTriggerCharacters": false,
+        "editor.inlineSuggest.enabled": false,
+        "editor.wordBasedSuggestions": "off",
+        "editor.tabCompletion": "off",
+        "editor.acceptSuggestionOnEnter": "off",
+        "editor.snippetSuggestions": "none"
     },
     "cph.language.cpp.Command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
     "cph.language.cpp.Args": "-std=c++17 -O2 -Wall -Wextra",
